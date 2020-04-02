@@ -1,0 +1,9 @@
+# Testing my Drools experiment API
+
+@port=8098
+@base=http://127.0.0.1:8098/api/v1/drools
+
+# Base URL
+GET {{base}}/ HTTP/1.1
+
+

@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.barrettotte'
@@ -14,11 +15,41 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test'){
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
+sourceSets {
+    main {
+        java.srcDirs   = ['src/main/java']
+        groovy.srcDirs = ['src/main/groovy']
+    }
+    test {
+        java.srcDirs   = ['src/test/java']
+        groovy.srcDirs = ['src/test/groovy']
+    }
+}
+
 test {
 	useJUnitPlatform()
+	testLogging {
+        exceptionFormat = 'full'
+        showExceptions true
+        events 'PASSED', 'FAILED', 'SKIPPED'
+        showStandardStreams = true
+    }
+    afterSuite{ desc, result ->
+        if(!desc.parent){
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: " +
+              "${result.testCount} tests, " +
+              "${result.successfulTestCount} succeeded, " +
+              "${result.failedTestCount} failed, " +
+              "${result.skippedTestCount} skipped"
+        }
+    }
 }
