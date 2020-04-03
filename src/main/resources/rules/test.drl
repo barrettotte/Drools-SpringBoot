@@ -1,0 +1,19 @@
+package rules
+
+import com.barrettotte.drools.model.Product;
+
+import java.math.BigDecimal;
+
+
+rule "Test 1"
+    when
+        $product : Product(
+			"Test 1".equals(name),
+			"Test".equals(type),
+			price.compareTo(new BigDecimal("100.00")) < 0
+		)
+    then
+        BigDecimal discount = BigDecimal.ZERO;
+		$product.setDiscount(discount);
+end
+

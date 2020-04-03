@@ -8,3 +8,4 @@ I also haven't done any Java/SpringBoot stuff in a bit, so this served as a dece
 
 ## References
 * https://www.baeldung.com/drools
+* SpringBoot + Drools starter https://github.com/jonashackt/spring-boot-starter-drools

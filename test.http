@@ -7,3 +7,12 @@
 GET {{base}}/ HTTP/1.1
 
 
+# Test basic rule - discount will be 0.0
+GET {{base}}/discount HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Test 1",
+    "type": "Test",
+    "price": "100.0"
+}
