@@ -4,6 +4,9 @@ A project to experiment with using Drools to process business rules.
 In this case, the business rules are the recipe system from [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild).
 
 
+**Disclaimer** - this probably isn't 100% correct, I wanted to stay somewhat pragmatic with this project.
+
+
 My current company has been using Drools extensively for years, so I wanted to learn more about it with a fun little project.
 I also haven't done any Java/SpringBoot stuff in a bit, so this served as a decent refresher.
 
@@ -30,4 +33,4 @@ I also haven't done any Java/SpringBoot stuff in a bit, so this served as a dece
 ## References
 * https://www.baeldung.com/drools
 * https://dzone.com/articles/introduction-to-rules-engine-using-drools-expert
-
+* http://orcz.com/Breath_of_the_Wild:_Recipes - this site seemed to have the most specific data
