@@ -14,7 +14,7 @@ public class DroolsService{
     @Autowired
 	private KieContainer kieContainer;
 
-    
+
     public Product calculateDiscount(final Product product){
         return runProductRules(copyProduct(product));
     }

@@ -1,17 +1,18 @@
-buildscript {
-	ext {
-		springBootVersion = '2.2.6.RELEASE'
-        droolsVersion = '7.22.0.Final'
+buildscript{
+	ext{
+		droolsVersion = '7.35.0.Final'
+        springBootVersion = '2.2.6.RELEASE'
+        swaggerVersion = '2.9.2'
 	}
-    repositories {
+    repositories{
         mavenCentral()
     }
-    dependencies {
+    dependencies{
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 }
 
-plugins {
+plugins{
 	id 'org.springframework.boot' version "${springBootVersion}"
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'eclipse'
@@ -23,23 +24,27 @@ group = 'com.barrettotte'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-repositories {
+repositories{
 	mavenCentral()
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+dependencies{
+	implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
 	implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 	
     implementation "org.kie:kie-spring:${droolsVersion}"
     implementation "org.drools:drools-compiler:${droolsVersion}"
+
+    implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test'){
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
-test {
+test{
 	useJUnitPlatform()
 	testLogging {
         exceptionFormat = 'full'

@@ -2,8 +2,6 @@ package com.barrettotte.drools.config;
 
 import java.io.IOException;
 
-import com.barrettotte.drools.service.DroolsService;
-
 import org.kie.api.KieBase;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
@@ -66,11 +64,6 @@ public class DroolsConfig{
     public KieBase kieBase() throws IOException {
         return kieContainer().getKieBase();
 	}
-	
-	// @Bean
-	// public DroolsService droolsService(){
-	// 	return new DroolsService();
-	// }
     
 	private KieServices getKieServices(){
 		return KieServices.Factory.get();

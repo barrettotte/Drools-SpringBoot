@@ -1,14 +1,22 @@
 # Testing my Drools experiment API
 
 @port=8098
-@base=http://127.0.0.1:8098/api/v1/drools
+@base=http://127.0.0.1:8098
 
 # Base URL
 GET {{base}}/ HTTP/1.1
 
 
+# Test actuator base
+GET {{base}}/actuator HTTP/1.1
+
+
+# Test Swagger base
+GET {{base}}/v2/api-docs HTTP/1.1
+
+
 # Test basic rule - discount will be 0.0
-GET {{base}}/discount HTTP/1.1
+GET {{base}}/api/v1/drools/discount HTTP/1.1
 Content-Type: application/json
 
 {
@@ -16,3 +24,4 @@ Content-Type: application/json
     "type": "Test",
     "price": "100.0"
 }
+
