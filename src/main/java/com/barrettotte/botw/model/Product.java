@@ -1,4 +1,4 @@
-package com.barrettotte.drools.model;
+package com.barrettotte.botw.model;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package com.barrettotte.drools.config;
+package com.barrettotte.botw.config;
 
 import java.util.Collections;
 import java.util.Set;
@@ -28,7 +28,7 @@ public class SwaggerConfig {
     Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()
-          .apis(RequestHandlerSelectors.basePackage("com.barrettotte.drools"))                               
+          .apis(RequestHandlerSelectors.basePackage("com.barrettotte.botw"))                               
           .paths(PathSelectors.any())
           .build()
           .apiInfo(apiInfo())
@@ -38,8 +38,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo(){
         return new ApiInfo(
-            "Drools API", 
-            "An API to handle running business rules via Drools", 
+            "BotW Recipe API", 
+            "An API to mimic the recipe system from The Legend of Zelda: Breath of the Wild", 
             "API TOS",
             "Terms of service", 
             DEFAULT_CONTACT, 

@@ -1,6 +1,6 @@
 package rules
 
-import com.barrettotte.drools.model.Product;
+import com.barrettotte.botw.model.Product;
 
 import java.math.BigDecimal;
 

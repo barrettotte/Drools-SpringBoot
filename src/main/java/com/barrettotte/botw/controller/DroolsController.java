@@ -1,4 +1,4 @@
-package com.barrettotte.drools.controller;
+package com.barrettotte.botw.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-import com.barrettotte.drools.model.Product;
-import com.barrettotte.drools.service.DroolsService;
+import com.barrettotte.botw.model.Product;
+import com.barrettotte.botw.service.DroolsService;
 
 
 @RestController

@@ -1,18 +1,18 @@
-package com.barrettotte.drools;
+package com.barrettotte.botw;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
-import com.barrettotte.drools.model.Product;
-import com.barrettotte.drools.service.DroolsService;
+import com.barrettotte.botw.model.Product;
+import com.barrettotte.botw.service.DroolsService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DroolsApplicationTests {
+class ApplicationTests {
 
 	@Autowired
 	DroolsService service;

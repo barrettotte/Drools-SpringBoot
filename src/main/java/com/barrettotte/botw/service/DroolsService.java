@@ -1,6 +1,6 @@
-package com.barrettotte.drools.service;
+package com.barrettotte.botw.service;
 
-import com.barrettotte.drools.model.Product;
+import com.barrettotte.botw.model.Product;
 
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;

@@ -1,4 +1,4 @@
-package com.barrettotte.drools.config;
+package com.barrettotte.botw.config;
 
 import java.io.IOException;
 
