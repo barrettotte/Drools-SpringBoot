@@ -6,14 +6,15 @@ import java.math.BigDecimal;
 
 
 rule "Test 1"
+	dialect "mvel"
     when
         $product : Product(
 			"Test 1".equals(name),
 			"Test".equals(type),
-			price.compareTo(new BigDecimal("100.00")) < 0
+			price.compareTo(new BigDecimal("100.00")) == 0
 		)
     then
-        BigDecimal discount = BigDecimal.ZERO;
+        BigDecimal discount = BigDecimal.valueOf(25.0);
 		$product.setDiscount(discount);
 end
 

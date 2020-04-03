@@ -15,7 +15,7 @@ GET {{base}}/actuator HTTP/1.1
 GET {{base}}/v2/api-docs HTTP/1.1
 
 
-# Test basic rule - discount will be 0.0
+# Test basic rule - discount will be 25.0
 GET {{base}}/api/v1/drools/discount HTTP/1.1
 Content-Type: application/json
 
