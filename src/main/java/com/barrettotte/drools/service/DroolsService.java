@@ -26,7 +26,7 @@ public class DroolsService{
     private Product runProductRules(final Product product){
         final KieSession kieSession = kieContainer.newKieSession();
 		kieSession.insert(product);
-		kieSession.fireAllRules();
+        kieSession.fireAllRules();
         kieSession.dispose();
         return product;
     }
