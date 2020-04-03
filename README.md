@@ -11,7 +11,6 @@ I also haven't done any Java/SpringBoot stuff in a bit, so this served as a dece
 * Actuator - monitoring (**http://127.0.0.1:8098/actuator**)
 * Drools - rules engine
 * Swagger - API documentation (**http://127.0.0.1:8098/swagger-ui.html**)
-* H2 Database for testing (**http://127.0.0.1:8098/h2-console**)
 
 
 ## References
