@@ -1,0 +1,48 @@
+package rules
+
+import com.barrettotte.premium.model.Vehicle;
+
+import java.math.BigDecimal;
+
+
+rule "Jeep Premium"
+	dialect "mvel"
+  when
+    $vehicle : Vehicle(
+      "Jeep".equalsIgnoreCase(make), 
+      "Cherokee".equalsIgnoreCase(model), 
+      1997 == year
+	  )
+    then
+		  $vehicle.setPremium($vehicle.getPremium() + BigDecimal.valueOf(25.0));
+end
+
+
+rule "Newer Years"
+  dialect "mvel"
+  when
+    $vehicle: Vehicle(year > 1999)
+  then
+    $vehicle.setPremium($vehicle.getPremium() - BigDecimal.valueOf(5.0));
+end
+
+
+rule "Porsche Premium"
+	dialect "mvel"
+  when
+    $vehicle: Vehicle("Porsche".equalsIgnoreCase(make))
+  then
+		$vehicle.setPremium($vehicle.getPremium() + BigDecimal.valueOf(100.0));
+end
+
+
+rule "Porsche 911"
+	dialect "mvel"
+  when
+    $vehicle: Vehicle(
+      "Porsche".equalsIgnoreCase(make), 
+      "911".equalsIgnoreCase(model)
+    )
+  then
+		$vehicle.setPremium($vehicle.getPremium() + BigDecimal.valueOf(100.0));
+end

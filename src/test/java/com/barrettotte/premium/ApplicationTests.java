@@ -17,13 +17,29 @@ class ApplicationTests {
 	@Autowired
 	PremiumService premiumService;
 
-	
+
 	@Test
-	void premium_Test1(){
+	void premium_Jeep(){
 		final Vehicle vehicle = premiumService.calculatePremium(
 			new Vehicle("Jeep", "Cherokee", 1997));
 
 		assertEquals(BigDecimal.valueOf(25.0), vehicle.getPremium());
+	}
+
+	@Test
+	void premium_Porsche(){
+		final Vehicle vehicle = premiumService.calculatePremium(
+			new Vehicle("Porsche", "Panamera", 2014));
+		
+		assertEquals(BigDecimal.valueOf(95.0), vehicle.getPremium());
+	}
+
+	@Test
+	void premium_Porsche_911(){
+		final Vehicle vehicle = premiumService.calculatePremium(
+			new Vehicle("Porsche", "911", 2014));
+		
+		assertEquals(BigDecimal.valueOf(195.0), vehicle.getPremium());
 	}
 
 }
