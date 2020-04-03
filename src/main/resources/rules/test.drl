@@ -1,20 +1,19 @@
 package rules
 
-import com.barrettotte.botw.model.Product;
+import com.barrettotte.premium.model.Vehicle;
 
 import java.math.BigDecimal;
 
 
-rule "Test 1"
+rule "Test Premium 1"
 	dialect "mvel"
     when
-        $product : Product(
-			"Test 1".equals(name),
-			"Test".equals(type),
-			price.compareTo(new BigDecimal("100.00")) == 0
+        $vehicle : Vehicle(
+			"Jeep".equalsIgnoreCase(make),
+			"Cherokee".equalsIgnoreCase(model),
+			1997 == year
 		)
     then
-        BigDecimal discount = BigDecimal.valueOf(25.0);
-		$product.setDiscount(discount);
+		$vehicle.setPremium(BigDecimal.valueOf(25.0));
 end
 

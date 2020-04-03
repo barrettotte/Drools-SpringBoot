@@ -1,4 +1,4 @@
-package com.barrettotte.botw.config;
+package com.barrettotte.premium.config;
 
 import java.util.Collections;
 import java.util.Set;
@@ -38,8 +38,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo(){
         return new ApiInfo(
-            "BotW Recipe API", 
-            "An API to mimic the recipe system from The Legend of Zelda: Breath of the Wild", 
+            "Vehicle Premium API", 
+            "A simple API to return premium depending on a vehicle's make/model/year",
             "API TOS",
             "Terms of service", 
             DEFAULT_CONTACT, 
