@@ -23,8 +23,8 @@ import com.barrettotte.premium.service.VehicleService;
 @Api(value="vehicle", description="Get list of vehicles")
 public class VehicleController{
 
-	@Autowired
-	private VehicleService service;
+    @Autowired
+    private VehicleService service;
     
 
     @GetMapping("/color")

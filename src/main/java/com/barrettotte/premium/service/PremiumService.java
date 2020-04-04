@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class PremiumService{
 
     @Autowired
-	private KieContainer kieContainer;
+    private KieContainer kieContainer;
 
 
     public Vehicle calculatePremium(final Vehicle vehicle){
@@ -25,7 +25,7 @@ public class PremiumService{
 
     private Vehicle runPremiumRules(final Vehicle vehicle){
         final KieSession kieSession = kieContainer.newKieSession();
-		kieSession.insert(vehicle);
+        kieSession.insert(vehicle);
         kieSession.fireAllRules();
         kieSession.dispose();
         return vehicle;

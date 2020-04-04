@@ -20,13 +20,13 @@ import com.barrettotte.premium.service.PremiumService;
 @Api(value="premium", description="Get premium of vehicle")
 public class PremiumController{
 
-	@Autowired
-	private PremiumService service;
+    @Autowired
+    private PremiumService service;
     
-	@GetMapping("/")
-	@ApiOperation(value="Calculate premium of a vehicle")
-	public ResponseEntity<Vehicle> calculatePremium(@RequestBody Vehicle vehicle) throws Exception{
-		return new ResponseEntity<Vehicle>(service.calculatePremium(vehicle), HttpStatus.OK);
+    @GetMapping("/")
+    @ApiOperation(value="Calculate premium of a vehicle")
+    public ResponseEntity<Vehicle> calculatePremium(@RequestBody Vehicle vehicle) throws Exception{
+        return new ResponseEntity<Vehicle>(service.calculatePremium(vehicle), HttpStatus.OK);
     }
     
 }
